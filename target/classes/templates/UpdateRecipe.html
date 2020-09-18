@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <style>
+      .error {color:red}
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Aplha Foods</title>
+    <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  </head>
+  <body>
+
+    <!-- Header Area wrapper Starts -->
+  
+        <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="margin-top: 10px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand"><img src="assets/img/alpha_logo.jpg" style="width:80px;height:70px; margin-left:-110px;border-radius:50%;" alt=""></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+
+            <!--logout session-->
+            <!--
+            <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item active" style="margin-left: 950px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signup" routerLinkActive="active">
+                  Signup
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active">
+                  Signin
+                </a>
+              </li>
+            </ul>-->
+          
+
+        <!--login session-->
+        
+           <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item" style="float:right;" >
+                <h6 style="font-family: cursive;" class="nav-link">
+                  Hello,&nbsp;Rajkumar!
+                </h6>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"  routerLink="/recipe" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+
+             
+            
+              <li class="nav-item"  style="margin-right: -110px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Logout
+                </a>
+              </li>
+            </ul>
+        
+            <!--login session end-->
+
+            
+          </div>
+        </div>
+    
+      </nav>
+      <!-- Navbar End -->
+<div >
+
+
+
+  <!-- Main Carousel Section Start -->
+  <div id="main-slide" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" style="height:900px; width: 1000px;" src="assets/img/gallery/bg2.jpg" alt="First slide">
+        <div class="carousel-caption d-md-block" style="margin-top: -190px;">
+
+              
+
+
+  <!-- Main Carousel Section End -->
+
+
+    <!-- Contact Us Section -->
+    <section id="contact-map" class="section-padding" style="margin-top: -50px;">  
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="section-title-header text-center">
+                <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Update Recipe</h1>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-xs-12">
+              <div class="container-form wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="form-wrapper">
+                  <form action="#"  th:action="@{/recipe/saveupdate}"
+						th:object="${recipeDetail}"  method="POST">
+						
+						 <input type="hidden" th:field="*{id}" />
+                    <div class="row">
+                        
+                        
+                        <div class="col-md-6 form-line">
+                            <div class="form-group">
+                                <h4 style="float:left;color:black;font-size: 100%;"><u>Recipe&nbsp;Image</u>:</h4>
+                                <!--<input type='file' style="color: black;" name='file' >-->
+                               
+								<img th:src="'http://localhost:9091/download/recipepicture/'+${recipeDetail.id}" width=50 length=50 />
+                                
+                                
+                                <br>
+                            </div>
+                        </div>
+                          <div class="col-md-6 form-line">
+                            <div class="form-group">
+                              
+                            </div>
+                          </div>
+
+                      <div class="col-md-6 form-line">
+                        <div class="form-group">
+						
+						
+						<input type="text" th:field="*{recipeName}"
+					class="form-control " placeholder="Recipe name" required="true">
+						
+                          
+                          <div class="help-block with-errors"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 form-line">
+                        <div class="form-group">
+						
+						<input type="text" th:field="*{cookingTime}"
+					class="form-control " placeholder="Time in hours" required="true">
+						
+                          <div class="help-block with-errors"></div>
+                        </div> 
+                      </div>
+                      
+                      <div class="col-md-12">
+                        <div class="form-group">
+						<input type="text" th:field="*{description}"
+					class="form-control " placeholder="About Recipe" required="true">
+					
+                           </div>
+                           <div   >
+                            <button type="submit"  class="btn btn-common" id="form-submit"><i aria-hidden="true"></i>  Update</button>
+                     
+                   
+                         
+                          </div>
+                          
+                     
+                        
+                        
+                        
+                      </div>
+                    </div>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Us Section End -->
+  
+    </div>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Footer start -->
+<footer class="footer-area section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+          <h3><u>OUR FIRST PROJECT</u> </h3>
+          <p>Rating and review system for Cooking Recipe</p>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+          <h3>My Team: </h3>
+          <ul>
+            <li><p>Arijit Das</p></li>
+            <li><p>Chintalapudi Rajkumar</p></li>
+            <li><p>Karan Rawlley</p></li>
+            <li><p>Raghwendra Kumar</p></li>
+            <li><p>Sachin Bhalla</p></li>
+            <li><p>Satvik Singh</p></li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+          
+        </div>
+        
+        <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+          <!-- /.widget -->
+          <div class="widget">
+            <h5 class="widget-title">FOLLOW US ON</h5>
+            <ul class="footer-social">
+              <li><a class="facebook"><i class="lni-facebook-filled"></i></a></li>
+              <li><a class="twitter"><i class="lni-twitter-filled"></i></a></li>
+              <li><a class="linkedin"><i class="lni-linkedin-filled"></i></a></li>
+              <li><a class="google-plus"><i class="lni-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Section End -->
+
+
+
+
+</div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
+      
+  </body>
+</html>

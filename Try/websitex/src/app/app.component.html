@@ -1,0 +1,41 @@
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="margin-top: 10px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand"><img src="assets/img/alpha_logo.jpg" style="width:80px;height:70px; margin-left:-110px;border-radius:50%;" alt=""></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item active" style="margin-left: 950px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signup" routerLinkActive="active">
+                  Signup
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active">
+                  Signin
+                </a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+    
+      </nav>
+      <!-- Navbar End -->
+<div >
+<router-outlet></router-outlet>
+</div>

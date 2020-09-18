@@ -1,0 +1,41 @@
+<header id="header-wrap">
+
+  <!-- Main Carousel Section Start -->
+  <div id="main-slide" class="carousel slide" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" style="height:900px; width: 1000px;" src="assets/img/slider/bg1.jpg" alt="First slide">
+        <div class="carousel-caption d-md-block" style="margin-top: -190px;">
+
+             <h2 style="float: left;"><u>Login Page</u></h2><br><br><br>
+             <div class="login" style="margin-left: -70px;">    
+              <form id="login" method="get" action="login.php"  *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>    
+                <label><b>User Name     
+                </b>    
+                </label>    
+                <input type="text" name="Uname" id="Uname" placeholder="Username" style="margin-left: -38px;" [(ngModel)]="form.username" #username="ngModel">    
+                <br><br>    
+                <label><b>Password     
+                </b>    
+                </label>    
+                <input type="Password" name="Pass" id="Pass" placeholder="Password" style="margin-left: -38px;" [(ngModel)]="form.password" #password="ngModel">    
+                <br><br>    
+                <a style="background:none;float: left;margin-left: 30px;" routerLink="/signup">New User?  <b>Register Here!</b></a>
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+             </form>     
+            </div>    
+
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+  <!-- Main Carousel Section End -->
+
+</header>
+<!-- Header Area wrapper End -->
+
+
+

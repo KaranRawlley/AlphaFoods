@@ -1,0 +1,323 @@
+
+<html lang="en"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <head>
+    <style>
+      .error {color:red}
+    </style>
+
+    <!-- Required meta tags -->
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Aplha Foods</title>
+    <base href="/">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="assets/css/nivo-lightbox.css" >
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+  </head>
+  <body th:each="samerecipe : ${recipe}">
+  
+  <form th:action="@{/rating/saverating}" 
+						  	   th:object="${rating}" method="POST"
+						  	   class="form-horizontal" >
+	  
+	  <input type="hidden" name="recipeId" th:value="${samerecipe.id}" />	
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="margin-top: 10px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand"><img src="assets/img/alpha_logo.jpg" style="width:80px;height:70px; margin-left:-110px;border-radius:50%;" alt=""></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+
+            <!--logout session-->
+            
+            <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item active" style="margin-left: 950px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+              
+             
+            </ul>
+          
+
+        <!--login session-->
+        <!--
+           <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item" style="float:right;" >
+                <h6 style="font-family: cursive;" class="nav-link">
+                  Hello,&nbsp;Rajkumar!
+                </h6>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"  routerLink="/recipe" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+
+              <div class="dropdown">
+                <img width="30" height="30" style="margin-top: 16px;margin-right:10px;margin-left:10px;" class="img-fluid" src="assets/img/background/arrow.png" alt="">
+                <div class="dropdown-content" style="margin-left: -30px;">
+                  <li class="nav-item">
+                    <a class="nav-link"  routerLink="/addrecipe">
+                      Add&nbsp;Recipe
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  routerLink="/myrecipe">
+                      My&nbsp;Recipe
+                    </a>
+                  </li>
+                </div>
+              </div>
+            
+              <li class="nav-item"  style="margin-right: -110px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Logout
+                </a>
+              </li>
+            </ul>
+          -->
+            <!--login session end-->
+
+            
+          </div>
+        </div>
+    
+      </nav>
+      <!-- Navbar End -->
+<div >
+</div>
+
+
+	<section id="pricing1" class="section-padding" >
+    <div class="container" th:each="samerecipe : ${recipe}">
+      <div class="row">
+        <div class="col-12">
+          <div class="section-title-header text-center" style="margin-top: 30px;margin-bottom: -20px;">
+            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s" th:text="${samerecipe.recipeName}"></h1>
+          </div>
+        </div>
+      </div>
+     </div>
+  </section><br>
+<br>
+    <!-- Event Slides Section Start -->
+    <section id="event-slides" class="section-padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInRight" data-wow-delay="0.3s">
+              <div class="video">
+               
+               	<div  >
+               	
+               	 <img style="width:520px;heigth:470px; margin-top:30px;" th:src="'http://localhost:9091/download/recipepicture/'+${samerecipe.id}" />
+               	 
+               	 <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s">
+               
+                
+                
+                 
+                  
+                 
+              
+              
+              
+  </div>
+               	 </div>
+               
+               
+               
+               
+               
+              </div>
+            </div>
+            
+
+ <div class="col-md-6 col-lg-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.3s"><br>
+ 
+ <div th:if="${error}" class="alert alert-danger col-xs-offset-1 col-xs-10">
+	<span th:text="${error}"></span>
+</div>
+                <h2 class="intro-title"> Cooking Time </h2>
+                <ul class="list-specification">
+                  <li><i class="lni-check-mark-circle" th:text="${samerecipe.cookingTime}"> </i> </li>
+                  
+                 
+                  
+                  <h2 ><a class="intro-title" ></a></h2>
+                </ul>
+                <br>
+               
+              
+              <input type="number" name="rating" id="rating" th:field="*{rating}" placeholder="Enter rating" class="form-control" min="1" max="5" required />
+                
+                <div th:if="${#fields.hasErrors('rating')}"
+							style="margin-bottom: 25px" class="text-danger">
+							<ul>
+							  <li th:each="err : ${#fields.errors('rating')}" th:text="'' + ${err}" />
+							</ul>						
+						</div>
+                  <br> 
+           <div class="col-md-6 form-line">
+                <div class="form-group" style="margin-left: -14px;">
+               
+                 <input type="text" name="comment" id="comment" th:field="*{comment}" placeholder="Enter your comment" class="form-control" required />
+                 
+                 <div th:if="${#fields.hasErrors('comment')}"
+							style="margin-bottom: 25px" class="text-danger">
+							<ul>
+							  <li th:each="err : ${#fields.errors('comment')}" th:text="'' + ${err}" />
+							</ul>						
+						</div>
+                 
+                  <br>
+                  
+                   <div style="margin-top: 10px" class="form-group">						
+							<div class="col-sm-6 controls">
+								<button type="submit" class="btn btn-common"> <i class="fa fa-paper-plane" aria-hidden="true"></i> Submit</button>
+							</div>
+						</div>
+                  
+                </div>
+                
+              </div>
+             
+              
+              </form>
+              
+     <!-- Comment Section Start -->
+    <section id="faq" class="section-padding" style="margin-top: -50px;">
+    
+    
+      
+        
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+            <div class="accordion">
+              <div class="card">
+               
+                <div class="card-header" id="headingOne">
+                  <div class="header-title" data-toggle="collapse" style="margin-left: 5px;" data-target="#questionOne" aria-expanded="true" aria-controls="collapseOne">
+                     Comments
+                  </div>
+                </div>
+                <div id="questionOne" class="collapse" aria-labelledby="headingOne">
+                  <div class="card-body" style="margin-bottom: -30px;">
+                    <h5 style="margin-left:-50px;"><b>Karan :</b></h5> Thankyou for this!!
+                  </div>
+                  <div class="card-body">
+                    <h5 style="margin-left:-50px;"><b>Sachin :</b></h5> Nice Recipe
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      
+    </section>
+    
+    <!-- Comment Section End -->
+            </div>
+             <h2 class="intro-title" style="margin-left:15px;">Description</h2>
+        
+              
+          </div>
+          <ul class="list-specification" style="margin-right: -200px;;">
+                <li><i class="lni-check-mark-circle" th:text="${samerecipe.description}"></i> </li>
+                
+              </ul>
+          
+         </div>
+      </section>
+      <!-- Event Slides Section End -->
+      
+
+
+<!-- Footer start -->
+<footer class="footer-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+        <h3><u>OUR FIRST PROJECT</u> </h3>
+        <p>Rating and review system for Cooking Recipe</p>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+        <h3>My Team: </h3>
+        <ul>
+          <li><p>Arijit Das</p></li>
+          <li><p>Chintalapudi Rajkumar</p></li>
+          <li><p>Karan Rawlley</p></li>
+          <li><p>Raghwendra Kumar</p></li>
+          <li><p>Sachin Bhalla</p></li>
+          <li><p>Satvik Singh</p></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+        
+      </div>
+      
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+        <!-- /.widget -->
+        <div class="widget">
+          <h5 class="widget-title">FOLLOW US ON</h5>
+          <ul class="footer-social">
+            <li><a class="facebook"><i class="lni-facebook-filled"></i></a></li>
+            <li><a class="twitter"><i class="lni-twitter-filled"></i></a></li>
+            <li><a class="linkedin"><i class="lni-linkedin-filled"></i></a></li>
+            <li><a class="google-plus"><i class="lni-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/wow.js"></script>
+    <script src="assets/js/jquery.slicknav.js"></script>
+    <script src="assets/js/nivo-lightbox.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/form-validator.min.js"></script>
+    <script src="assets/js/contact-form-script.min.js"></script>
+    <script src="assets/js/map.js"></script>
+    <script type="text/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
+      
+  </body>
+</html>
