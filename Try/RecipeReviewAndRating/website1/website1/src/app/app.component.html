@@ -1,0 +1,82 @@
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header" style="margin-top: 10px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="index.html" class="navbar-brand"><img src="assets/img/alpha_logo.jpg" style="width:80px;height:70px; margin-left:-110px;border-radius:50%;" alt=""></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+
+            <!--logout session-->
+            <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item active" style="margin-left: 950px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signup" routerLinkActive="active">
+                  Signup
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/signin" routerLinkActive="active">
+                  Signin
+                </a>
+              </li>
+            </ul>
+
+
+        <!--login session-->
+           <!-- <ul class="navbar-nav mr-auto w-100 justify-content-end" >
+              <li class="nav-item" style="float:right;" >
+                <h6 style="font-family: cursive;" class="nav-link">
+                  Hello,&nbsp;Rajkumar!
+                </h6>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link"  routerLink="/recipe" routerLinkActive="active">
+                  Home
+                </a>
+              </li>
+
+              <div class="dropdown">
+                <img width="30" height="30" style="margin-top: 16px;margin-right:10px;margin-left:10px;" class="img-fluid" src="assets/img/background/arrow.png" alt="">
+                <div class="dropdown-content" style="margin-left: -30px;">
+                  <li class="nav-item">
+                    <a class="nav-link"  routerLink="/addrecipe">
+                      Add&nbsp;Recipe
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  routerLink="/myrecipe">
+                      My&nbsp;Recipe
+                    </a>
+                  </li>
+                </div>
+              </div>
+            
+              <li class="nav-item"  style="margin-right: -110px;">
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                  Logout
+                </a>
+              </li>
+            </ul>-->
+            <!--login session end-->
+
+            
+          </div>
+        </div>
+    
+      </nav>
+      <!-- Navbar End -->
+<div >
+<router-outlet></router-outlet>
+</div>

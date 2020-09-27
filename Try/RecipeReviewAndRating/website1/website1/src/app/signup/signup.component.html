@@ -1,0 +1,124 @@
+<header id="header-wrap">
+  
+    <!-- Main Carousel Section Start -->
+    <div id="main-slide" class="carousel slide" data-ride="carousel">
+      
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" style="height:900px; width: 1000px;" src="assets/img/slider/bg2.jpg" alt="First slide">
+          <div class="carousel-caption d-md-block" style="margin-top: -190px;">
+  
+               <h2 style="float: right;margin-right:100px;"><u>Register</u></h2><br><br><br>
+               <div class="login" style="margin-left: 500px;">    
+                <form id="login" method="get" action="onSubmit()"
+                *ngIf="!isSuccessful"
+                name="form"
+                (ngSubmit)="f.form.valid && onSubmit()"
+                #f="ngForm"
+                novalidate
+                >  
+                    <label style="float:left;"><b>Email    
+                   </b>    
+                    </label>
+                    <input type="email" name="Email" id="Email" placeholder="Enter your mail here" style="margin-left: 100px;" required
+                    [(ngModel)]="form.email"
+                    #email="ngModel"
+                    >
+                    <br><br>   
+                  <label style="float:left;"><b>User Name     
+                  </b>    
+                  </label>    
+                  <input type="text" name="Uname" id="Uname" placeholder="Username" style="margin-left: 60px;" required
+                  [(ngModel)]="form.username"
+                  required
+                  minlength="3"
+                  maxlength="20"
+                  #username="ngModel"
+                  >    
+                  <br><br>    
+                    
+
+                  <label style="float:left;margin-right: 90px;"><b>Mobile
+                  </b>
+                  
+                  </label>
+                  +91<input type="tel" name="Phone" id="Phone" placeholder="Enter mobile number" style="margin-left: 15px;"
+                  pattern="[0-9]{10}"  required>
+
+                   
+                  <br><br>
+                  <label style="float:left; "><b>Password          
+                  </b>  
+                  </label>  
+                  <input type="Password" name="Pass" id="Pass" placeholder="Password" style="margin-left: 70px;" required
+                  [(ngModel)]="form.password"
+                   minlength="6"
+                   #password="ngModel"
+                  >    
+                  <br><br>    
+                  <label style="float:left;"><b>Confirm Password 
+                </b>&nbsp; 
+                </label>    
+                <input type="Password" name="Pass1" id="Pass1" placeholder="Re-enter Password" style="margin-left: px;" required>    
+                <br><br>
+                <a style="background:none;float: left;margin-left: 120px;" routerLink="/signup">Already a member?  <b>Login Here!</b></a>
+                <br>   
+
+                  <button type="submit" class="btn btn-primary btn-block" onclick="onSubmit()">Register</button>
+               </form>     
+              </div>    
+  
+          </div>
+        </div>
+        
+      </div>
+      
+    </div>
+    <!-- Main Carousel Section End -->
+  
+  </header>
+  <!-- Header Area wrapper End -->
+
+
+
+
+  
+<!-- Footer start -->
+<footer class="footer-area section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.2s">
+        <h3><u>OUR FIRST PROJECT</u> </h3>
+        <p>Rating and review system for Cooking Recipe</p>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.4s">
+        <h3>My Team: </h3>
+        <ul>
+          <li><p>Arijit Das</p></li>
+          <li><p>Chintalapudi Rajkumar</p></li>
+          <li><p>Karan Rawlley</p></li>
+          <li><p>Raghwendra Kumar</p></li>
+          <li><p>Sachin Bhalla</p></li>
+          <li><p>Satvik Singh</p></li>
+        </ul>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
+        
+      </div>
+      
+      <div class="col-md-6 col-lg-3 col-sm-6 col-xs-12 wow fadeInUp" data-wow-delay="0.8s">
+        <!-- /.widget -->
+        <div class="widget">
+          <h5 class="widget-title">FOLLOW US ON</h5>
+          <ul class="footer-social">
+            <li><a class="facebook"><i class="lni-facebook-filled"></i></a></li>
+            <li><a class="twitter"><i class="lni-twitter-filled"></i></a></li>
+            <li><a class="linkedin"><i class="lni-linkedin-filled"></i></a></li>
+            <li><a class="google-plus"><i class="lni-google-plus"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
